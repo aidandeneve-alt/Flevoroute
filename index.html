@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌷 Flevo Route Experience | Explore Flevoland's Dynamic Beauty</title>
+    
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Fonts: Playfair Display for headings, Poppins for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Load Particle.js library for the subtle animated background -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Tailwind Configuration and Custom Styles -->
+    <style>
+        /* Configure Tailwind to use the specified fonts */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'flevo-primary': '#4a7c59', /* Deep, nature green */
+                        'flevo-accent': '#f4c430', /* Tulip yellow/gold */
+                        'flevo-dark': '#1e3a24',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0', filter: 'blur(5px)' },
+                            '100%': { opacity: '1', filter: 'blur(0)' },
+                        },
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 1s ease-out forwards',
+                        'fade-in': 'fade-in 1.5s ease-out forwards',
+                    }
+                }
+            }
+        }
+
+        /* Base styles for the entire page */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f7f9fb;
+            overflow-x: hidden;
+        }
+
+        /* Particle background layer */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #e6e6e6; /* Very light gray */
+            background-image: url('');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index: -1; /* Ensures content is above particles */
+        }
+        
+        /* Utility for animation visibility */
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Specific styles for the explanation visual */
+        .moooi-style-visual {
+            background-image: url('https://placehold.co/600x400/80a06c/ffffff?text=Flevo+Polder+Map+Visual');
+            background-size: cover;
+            background-position: center;
+            border-radius: 1.5rem;
+            min-height: 250px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Custom delay classes for staggered hero animation */
+        .delay-0 { animation-delay: 0s; }
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .animate-hero-text { opacity: 0; animation-fill-mode: forwards; }
+
+    </style>
+</head>
+<body class="font-body">
+
+    <!-- Background Layer for Particles -->
+    <div id="particles-js" class="hero-background"></div>
+
+    <!-- COMPETITION WARNING BANNER -->
+    <div class="bg-flevo-accent text-flevo-dark p-3 text-center text-sm font-semibold shadow-lg">
+        <span class="inline-block animate-pulse">⚠️</span> <strong class="uppercase tracking-wider">Competition Entry:</strong> This route is a proposal. It cannot be booked or taken at this time.
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="relative flex items-center justify-center h-screen bg-flevo-dark bg-opacity-90 overflow-hidden">
+        <div class="z-10 text-center text-white p-6 max-w-4xl">
+            <h1 class="font-heading text-6xl md:text-8xl lg:text-[7rem] font-extrabold mb-4 leading-tight animate-hero-text delay-0">
+                The Flevo Route
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-10 animate-hero-text delay-1 tracking-wide">
+                Where New Land Meets Dynamic Stories & Blooming Beauty.
+            </p>
+            <a href="#explore" class="inline-block bg-flevo-accent text-flevo-dark font-semibold py-4 px-10 rounded-full text-lg hover:bg-yellow-400 transition duration-300 transform hover:scale-105 shadow-2xl animate-hero-text delay-2">
+                Discover Your Journey
+            </a>
+        </div>
+    </header>
+
+    <!-- FEATURE SECTION: Key Destinations (The Three Squares) -->
+    <section id="explore" class="py-20 md:py-32 section-hidden">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-4xl font-heading font-bold text-center mb-16 text-flevo-dark">Key Destinations of the Route</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                
+                <!-- Card 1: Bultpark -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-flevo-primary section-hidden">
+                    <span class="text-5xl mb-4 block">🌿</span>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-flevo-primary">Bultpark: The Green Heart</h3>
+                    <p class="text-gray-600">Discover a serene urban oasis with diverse wildlife and elevated mounds offering unique views over Lelystad. Perfect for a calming walk or birdwatching.</p>
+                </div>
+                
+                <!-- Card 2: Batavia Haven -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-flevo-primary section-hidden" style="transition-delay: 0.2s;">
+                    <span class="text-5xl mb-4 block">⚓</span>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-flevo-primary">Batavia Haven: Maritime Scenery</h3>
+                    <p class="text-gray-600">Visit the historic harbor where the magnificent Batavia ship rests. Enjoy the picturesque waterfront, specialty shops, and a vibrant, nautical atmosphere.</p>
+                </div>
+                
+                <!-- Card 3: De Hurkende Man -->
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-flevo-primary section-hidden" style="transition-delay: 0.4s;">
+                    <span class="text-5xl mb-4 block">🗿</span>
+                    <h3 class="text-2xl font-heading font-bold mb-3 text-flevo-primary">De Hurkende Man: Iconic Art</h3>
+                    <p class="text-gray-600">Encounter one of Flevoland's most striking land art installations—the "Squatting Man." This massive sculpture offers a compelling photo opportunity and a sense of scale.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ROUTE EXPLANATION SECTION -->
+    <section class="bg-gray-100 py-20 md:py-32 section-hidden">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Content Column -->
+                <div class="explanation-content section-hidden">
+                    <span class="text-flevo-accent text-lg font-semibold block mb-2">Our Vision</span>
+                    <h2 class="text-4xl font-heading font-bold mb-6 text-flevo-dark">Why Our Flevo Route is Unforgettable</h2>
+                    <p class="text-xl font-light mb-6 text-gray-700">Beyond the scenic views, the Flevo Route offers a journey through human ingenuity and breathtaking natural beauty.</p>
+                    <p class="mb-4 text-gray-600">This route has been meticulously designed to showcase the diverse wonders of Flevoland, the Netherlands' youngest province. You will experience the sheer awe of driving on land reclaimed from the sea, tracing the history of the massive reclamation project. The path connects monumental <strong class="text-flevo-primary">Land Art</strong> pieces, tranquil <strong class="text-flevo-primary">Nature Reserves</strong> like Bultpark, and historically rich locations such as <strong class="text-flevo-primary">Batavia Haven</strong>.</p>
+                    <p class="mb-4 text-gray-600">It's not just a drive; it's a dynamic, educational, and visually stunning exploration that links the best of Flevoland's natural, cultural, and engineering marvels. This carefully curated itinerary ensures every traveler leaves with a deep appreciation for the province's unique story.</p>
+                </div>
+                
+                <!-- Visual Column -->
+                <div class="explanation-visual-wrapper section-hidden">
+                   <div class="moooi-style-visual aspect-video"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DYNAMIC QUOTE SECTION -->
+    <section class="bg-flevo-dark py-20 text-white section-hidden">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <blockquote id="quote-text" class="text-3xl md:text-4xl font-heading italic font-light mb-4">
+                "A journey through history, color, and a landscape born from the sea."
+            </blockquote>
+            <p id="quote-author" class="text-flevo-accent text-xl font-semibold">– Flevoland Explorer</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-flevo-dark border-t border-flevo-primary/50 py-8 text-center text-gray-400">
+        <p class="text-sm">&copy; 2024 Flevo Route Experience. Powered by Passion for the Polder.</p>
+    </footer>
+
+    <!-- JavaScript for Particles and Intersection Observer -->
+    <script>
+        // Set up Particle.js background
+        function initParticles() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#ffffff" },
+                    "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 } },
+                    "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                    "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                    "modes": {
+                        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                        "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                        "repulse": { "distance": 200, "duration": 0.4 },
+                        "push": { "particles_nb": 4 },
+                        "remove": { "particles_nb": 2 }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+        
+        // Setup Intersection Observer for scroll animations
+        function setupScrollObserver() {
+            const sections = document.querySelectorAll('.section-hidden');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        entry.target.classList.remove('section-hidden');
+                        
+                        // For cards, stagger the animation after they become visible
+                        if (entry.target.classList.contains('feature-card')) {
+                             entry.target.style.animation = 'slide-up 0.8s ease-out forwards';
+                        }
+                        
+                        // Stop observing once visible
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            sections.forEach(section => observer.observe(section));
+            
+            // Apply the initial hero text animation (using custom Tailwind animation keys)
+            const heroElements = document.querySelectorAll('.animate-hero-text');
+            heroElements.forEach(el => {
+                 el.style.animation = 'fade-in 1.2s ease-out forwards';
+            });
+        }
+
+        // Initialize on window load
+        window.onload = function() {
+            initParticles();
+            setupScrollObserver();
+        };
+
+        // Smooth scroll for anchor link
+        document.querySelector('a[href="#explore"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#explore').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+    </script>
+</body>
+</html>
